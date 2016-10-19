@@ -1,0 +1,123 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{ amssymb }
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.3}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+\hyphenation{im-pre-se}
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+\pagestyle{empty} % non-numbered pages
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Mrityunjay \textsc{Kumar}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & Pune, India  \hfill | \hfill December 1993 \\
+    \textsc{Phone:}     & +91-8800300687 \\
+    \textsc{Skype:}     & mrityunjay.kumar\textunderscore tal \\
+    \textsc{Linkedin:}  & \href{https://in.linkedin.com/in/mj2030
+}{Mrityunjay\textquotesingle s LinkedIn}\\
+    \textsc{email:}     & \href{mailto:mjaycse@gmail.com}{mjaycse@gmail.com}
+\end{tabular}
+
+\section{Skill set}
+\begin{tabular}{rl}
+ Languages: & \href{Rating:9/10}{C/C++} , \href{Rating:8/10}{Python} , \href{Rating:7/10}{Java} \\
+ Machine Learning \& NLP: & numpy, scipy, gensim, openCV \\
+\end{tabular}
+
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{13cm}}
+ \emph{Current} & Data Scientist at \textsc{Talentica Software}, Pune, \textsc{India} \\\textsc{April 2016}&\emph{Software Enginerring , Machine Learning and NLP Modelling}\\&\footnotesize
+\begin{itemize}
+\item Implemented a search engine model using \textsc{Topic Modelling} as deep learning.
+\item Designed a multi-folder cloud sync application using rsync
+\end{itemize}\\
+\multicolumn{2}{c}{} \\
+ \textsc{Aug 2014 - April 2016} & Software Engineer-I at \textsc{Mediatek Pvt Ltd}, Noida \\&\emph{Software Enginnering , Native OS Level}\\&\footnotesize
+ \begin{itemize}
+\item Entitled Major Ownership for Audio Player in Feature Phone.
+\item Implemented Packet Data Interfaces \textsc{RS232, ETHERNET, USB, SDIO}
+\item Implemented GPS Logger Emulator for concurrent \textsc{NMEA} data
+\end{itemize} \\
+\multicolumn{2}{c}{}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{July} 2010 & Bachelor of Technology in \textsc{Computer Science}, \textbf{Maulana Azad NIT}, Bhopal\\\textsc{- April 2016}
+& Major Project: ``Feature Extraction \& Sentiment Analysis
+of Social Data'' \\ 
+& \small Advisor: Prof. Saritha \textsc{Khetwat}
+{\hfill CGPA: 7.85/10} \\
+
+\textsc{April} 2010& \textbf{Intermediate XII}, State Board {\hfill Percentage: 74/100} \\
+
+\textsc{April} 2008& \textbf{Matriculation X}, State Board {\hfill Percentage: 76.8/100} \\
+\end{tabular}
+\break
+%Section: Mooc Attended
+\section{Certification \& MOOC\textquotesingle s Attended}
+\begin{tabular}{rl}
+
+\textsc{Machine Leaning Specialization :} & \textsc{coursera} [2/5]\\
+\textsc{Machine Learning :} & \textsc{coursera} (\small Andrew Ng) [Ongoing]\\
+\textsc{Basic Statistics :} & \textsc{coursera} [Completed]\\
+\textsc{Probabilistic Graphical Model :} & \textsc{coursera} [1/3] \\
+
+
+\end{tabular}
+
+%Section: Personal Projects
+\section{Personal Projects}
+\begin{tabular}{rl}
+
+\textsc{April.} 2016 & Rule based AI model handling queries PC Services \& Simple web crawling \\
+\textsc{Feb.} 2016 & Framework for p2p cloud over the air to support chrome-cast play. \\
+\textsc{Dec.} 2014 & Tool for quick access to recent activities at Windows PC\\
+
+
+\end{tabular}
+
+
+\end{document}
