@@ -13,14 +13,14 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
+% \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
 \usepackage{pgfplots}
 \usetikzlibrary{calc}
 \usepackage{tkz-euclide}
 \usepackage{pst-eucl}
 
-
+\usepackage[hidelinks]{hyperref}
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
@@ -42,23 +42,23 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+	\vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[2]{
-  \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
-  }
+	\item\small{
+		\textbf{#1}{: #2 \vspace{-2pt}}
+	}
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+	\vspace{-1pt}\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{\small#3} & \textit{\small #4} \\
+	\end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
@@ -66,180 +66,181 @@
 \renewcommand{\labelitemii}{$\circ$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+	\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+	\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 
 
 % new cmds
 \usepackage{tikz}
 \newcommand\mjay[2]{%
-  \ifnum#1>#2
-    $#1 > #2$
-  \else
-    \ifnum#1<0
-      $#1 < 0$
-    \else
-      \ifnum#2<0
-        $#2 < 0$
-      \else
-        \tikz{%
-        \ifx#20
-        \else
-          \foreach \i in {1,...,#2} {
-            \filldraw[black!20] (\i ex,0) circle (0.5ex);
-          };
-        \fi
-        \ifx#10
-        \else
-          \foreach \i in {1,...,#1} {
-            \filldraw[black] (\i ex,0) circle (0.4ex);
-          };
-        \fi
-        }
-      \fi
-    \fi
-  \fi
+	\ifnum#1>#2
+	$#1 > #2$
+	\else
+	\ifnum#1<0
+	$#1 < 0$
+	\else
+	\ifnum#2<0
+	$#2 < 0$
+	\else
+	\tikz{%
+		\ifx#20
+		\else
+		\foreach \i in {1,...,#2} {
+			\filldraw[black!20] (\i ex,0) circle (0.5ex);
+		};
+		\fi
+		\ifx#10
+		\else
+		\foreach \i in {1,...,#1} {
+			\filldraw[black] (\i ex,0) circle (0.4ex);
+		};
+		\fi
+	}
+	\fi
+	\fi
+	\fi
 }
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
-
-%----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{{\Large Mrityunjay Kumar}} & 
-  Email : \href{mailto:mjaycse@gmail.com}{mjaycse@gmail.com}
-  \\
-  Skype: mrityunjay.kumar\_tal & Mobile : +91-8800300687 
-  \\
-\end{tabular*}
-
-
-%-----------EDUCATION-----------------
-
-\             \\
-
-\section{Education}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-    {Maulana Azad National Institute Of Technology}{Bhopal, India}
-      {Bachelor of Technology in Computer Science and Engineering;  GPA: 7.85/10.0} {Aug. 2010 -- May. 2014} 
-  \resumeSubHeadingListEnd
-
-%--------PROGRAMMING SKILLS------------
-\section{Programming Skills}
-
-\begin{tabular}{rl}
-C, C++ , Python &\quad\quad\quad\quad \mjay{8}{10}\\
-NLTK, Sci-kit, NumPy &\quad\quad\quad\quad \mjay{7}{10} \\
-Data Structure and Algorithms &\quad\quad\quad\quad \mjay{8}{10} \\
-\end{tabular}\\
-
-%-----------EXPERIENCE-----------------
-\section{Experience}
-  \resumeSubHeadingListStart
-    % Talentica
-    \resumeSubheading
-      {Talentica Software }{Pune, India}
-      {Software Engineer - Data Science}{April 2016 - Present}
-      \resumeItemListStart
-      
-        \resumeItem{Cloud Sync Application}\hfill{[Python,C++,File System]}\newline\\
-          {Smart File system service to  allow two way delta sync}
-          \\Key Features:\\
-        \quad - Add and remove origin folders to sync\\
-        \quad - Push Annotated files back to user\\
-        \quad - Multi-platform silent auto-update framework \\
-        \quad - Sharing of content across Multi-tenant architecture
-        \\
-        
-        \resumeItem{Search Engine}\hfill{[Machine Learning,NLP,Deep Learning, Python,Neo4j]}\newline\\
-          {A topic modelling based domain specific search engine model for handling large documents and providing intent based search retrieval.}
-          \\Key Features:\\
-        \quad - {Smart Query classifier} \\
-        \quad - {Loss less Text Extraction} \\
-        \quad - {Used LDA/LSA to generate document vectors}\\
-        \quad - {Used graph DB for faster query processing and retrieval }\\
-        \quad - {Automated ontology formation based on domain knowledge }\\
-        \quad - {Clustering of documents with deep learning to understand the underneath context }     
-        \\
-        \resumeItem{Image Processing}\hfill{[Machine Learning,OpenCV]}\newline\\
-          {A POC which runs various ML algorithm on image data}
-          \\Implementations Done:\\
-        \quad - {Clustering all color patterns contained in image logo} \\
-        \quad - {Identifying mobile numbers in scanned pdf}\\
-        \quad - {Extracting normal text from images}\\
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Mediatek}{Noida, India}
-      {Software Engineer}{Aug 2014 - April 2016}
-      \resumeItemListStart
-        \resumeItem{Audio Player}\hfill{[C,MTK Native OS]}\newline\\
-          {Entitled Major Ownership for Audio player in feature phones}
-          \\Role and Responsibilities:\\
-            \quad - {Implementation of new requirements and assisted bug resolution} \\
-        \quad - {Implemented user defined play list [generation,delete,sharing]}\\
-        \quad - {Implemented new BT stack into Audio Player }\\
-        \quad - {Modified AUDIO Play engine for asynchronous event handling}\\
-        \break
-        \resumeItem{Combo Tool}\hfill{[C++,MFC,PCAP,OS Native Layer]}\newline\\
-          {GUI Tool for processing modular commands for various system level test.}
-          \\Key Features:\\
-        \quad - {Implemented wrapper for WIN32 API for interacting with POSIX lib}\\
-        \quad - {Implemented event driven asynchronous architecture}\\
-        \quad - {Implemented packet data interfaces : Serial, RS232, Ethernet, USB}\\
-        
-        \resumeItem{GPS Logger}\hfill{[Java,GPS Port Layer]}\newline\\
-          {GUI Tool for monitoring online NMEA data from GPS Port.}
-          \\Key Features:\\
-        \quad - {Designed a pipeline system where Logger tool and android application can run benchmarking test cases.}
-        
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-%-----------PROJECTS-----------------
-\section{Academic / Personal Projects}
-  \resumeSubHeadingListStart
-    \resumeSubItem{Product feature and Opinion extraction of Amazon dataset}
-        \hfill{Prof. Saritha Khetawat}\newline\\
-        \hfill{[NLTK,Python]}\\
-      \quad - {Implemented Logistic regression to model product sentiments using HMM }\\
-      \quad - {Implemented detection of explicit features and opinion extraction in dataset}\\
-      \quad - {Used graph DB to store the reviews about features}\\
-      
-    \resumeSubItem{Semantic Orientation Of Twitter Data }
-        \hfill{Prof. Saritha Khetawat}\newline\\
-        \hfill{[Java,Stanford Parser,Senti-wordnet,ML]}\\
-      \quad - {Implemented classification for important aspect about a tweet}\\
-      \quad - {Implemented semi-supervised score provider word polarity}\\
-      \quad - {Listed user provided sentiment for key features about particular product.}\\
-     
-
-    \resumeSubItem{Personal computer Assistant }\newline
-        \hfill{[Python-falcon,ML-msg.ai,C++]}\\
-
-        Key Features:\\
-        \quad - {GUI Tool for quick access to recent activities at PC.}\\
-        \quad - {Maintaining permanent system cache for all favorite processes}\\
-        \quad - {Desktop service : Playing music/movies/finding docs}\\
-        \quad - {Web services : Top rated movies at IMDb,Wikipedia keyword information,Dictionary}
-        \resumeSubHeadingListEnd
-
-%
-\section{Certification \& MOOC\' s Attended}
-
-\resumeSubHeadingListStart
-    \resumeSubItem{Machine Leaning Specialization } \hfill \textsc{coursera} [2/5]
-    \resumeSubItem{Machine Learning } \hfill\textsc{coursera} [3/5]
-    \resumeSubItem{Basic Statistics } \hfill\textsc{coursera} [completed]
-    \resumeSubItem{Probabilistic Graphical Model } \hfill\textsc{coursera} [1/3]
-    \resumeSubItem{Python for Everybody Specialization} \hfill\textsc{coursera} [completed]
-    
-\resumeSubHeadingListEnd
-
-%-------------------------------------------
+	
+	%----------HEADING-----------------
+	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+		\textbf{\href{Data Scientist with 3 years of experience 2k14 Batch NIT Bhopal}{\Large Mrityunjay Kumar}} & 
+		Email : \href{mailto:mjaycse@gmail.com}{mjaycse@gmail.com}
+		\\
+		Skype: mrityunjay.kumar\_tal & Mobile : +91-8800300687 
+		\\
+	\end{tabular*}
+	
+	
+	%-----------EDUCATION-----------------
+	
+	\             \\
+	
+	\section{Education}
+	\resumeSubHeadingListStart
+	
+	\resumeSubheading
+	{Maulana Azad National Institute Of Technology}{Bhopal, India}
+	{Bachelor of Technology in Computer Science and Engineering;  GPA: 7.85/10.0} {Aug. 2010 -- May. 2014} 
+	\resumeSubHeadingListEnd
+	
+	%--------PROGRAMMING SKILLS------------
+	\section{Programming Skills}
+	
+	\begin{tabular}{rl}
+		C, C++ , Python &\quad\quad\quad\quad \mjay{8}{10}\\
+		NLTK, Sci-kit, NumPy &\quad\quad\quad\quad \mjay{7}{10} \\
+		Data Structure and Algorithms &\quad\quad\quad\quad \mjay{8}{10} \\
+	\end{tabular}\\
+	
+	%-----------EXPERIENCE-----------------
+	\section{Experience}
+	\resumeSubHeadingListStart
+	% Talentica
+	\resumeSubheading
+	{Talentica Software }{Pune, India}
+	{Software Engineer - Data Science}{April 2016 - Present}
+	\resumeItemListStart
+	
+	\resumeItem{Cloud Sync Application}\hfill{[Python,C++,File System]}\newline\\
+	{Smart File system service to  allow two way delta sync}
+	\\Key Features:\\
+	\quad - Add and remove origin folders to sync\\
+	\quad - Push Annotated files back to user\\
+	\quad - Multi-platform silent auto-update framework \\
+	\quad - Sharing of content across Multi-tenant architecture
+	\\
+	
+	\resumeItem{Search Engine}\hfill{[Machine Learning,NLP,Deep Learning, Python,Neo4j]}\newline\\
+	{A topic modelling based domain specific search engine model for handling large documents and providing intent based search retrieval.}
+	\\Key Features:\\
+	\quad - {On-line Ontology enhancer \& Parser} \\
+	\quad - {Designed in-line query expansion w.r.t Ontology}
+	\quad - {Loss less Text Extraction} \\
+	\quad - {Used LDA/LSA to generate document vectors}\\
+	\quad - {Used graph DB for faster query processing and retrieval }\\
+	\quad - {Automated ontology formation based on domain knowledge }\\
+	\quad - {Clustering of documents with deep learning to understand the underneath context }     
+	\\
+	\resumeItem{Image Processing}\hfill{[Machine Learning,OpenCV]}\newline\\
+	{A POC which runs various ML algorithm on image data}
+	\\Implementations Done:\\
+	\quad - {Clustering all color patterns contained in image logo} \\
+	\quad - {Identifying mobile numbers in scanned pdf}\\
+	\quad - {Extracting normal text from images}\\
+	\resumeItemListEnd
+	
+	\resumeSubheading
+	{Mediatek}{Noida, India}
+	{Software Engineer}{Aug 2014 - April 2016}
+	\resumeItemListStart
+	\resumeItem{Audio Player}\hfill{[C,MTK Native OS]}\newline\\
+	{Entitled Major Ownership for Audio player in feature phones}
+	\\Role and Responsibilities:\\
+	\quad - {Implementation of new requirements and assisted bug resolution} \\
+	\quad - {Implemented user defined play list [generation,delete,sharing]}\\
+	\quad - {Implemented new BT stack into Audio Player }\\
+	\quad - {Modified AUDIO Play engine for asynchronous event handling}\\
+	\break
+	\resumeItem{Combo Tool}\hfill{[C++,MFC,PCAP,OS Native Layer]}\newline\\
+	{GUI Tool for processing modular commands for various system level test.}
+	\\Key Features:\\
+	\quad - {Implemented wrapper for WIN32 API for interacting with POSIX lib}\\
+	\quad - {Implemented event driven asynchronous architecture}\\
+	\quad - {Implemented packet data interfaces : Serial, RS232, Ethernet, USB}\\
+	
+	\resumeItem{GPS Logger}\hfill{[Java,GPS Port Layer]}\newline\\
+	{GUI Tool for monitoring online NMEA data from GPS Port.}
+	\\Key Features:\\
+	\quad - {Designed a pipeline system where Logger tool and android application can run benchmarking test cases.}
+	
+	\resumeItemListEnd
+	\resumeSubHeadingListEnd
+	%-----------PROJECTS-----------------
+	\section{Academic / Personal Projects}
+	\resumeSubHeadingListStart
+	\resumeSubItem{Product feature and Opinion extraction of Amazon dataset}
+	\hfill \href{mailto:sarithakishan@gmail.com}{Prof. Saritha Khetawat}\newline\\
+	\hfill{[NLTK,Python]}\\
+	\quad - {Implemented Logistic regression to model product sentiments using HMM }\\
+	\quad - {Implemented detection of explicit features and opinion extraction in dataset}\\
+	\quad - {Used graph DB to store the reviews about features}\\
+	
+	\resumeSubItem{Semantic Orientation Of Twitter Data }
+	\hfill \href{mailto:sarithakishan@gmail.com}{Prof. Saritha Khetawat}\newline\\
+	\hfill{[Java,Stanford Parser,Senti-wordnet,ML]}\\
+	\quad - {Implemented classification for important aspect about a tweet}\\
+	\quad - {Implemented semi-supervised score provider word polarity}\\
+	\quad - {Listed user provided sentiment for key features about particular product.}\\
+	
+	
+	\resumeSubItem{Personal computer Assistant }\newline
+	\hfill{[Python-falcon,ML-msg.ai,C++]}\\
+	
+	Key Features:\\
+	\quad - {GUI Tool for quick access to recent activities at PC.}\\
+	\quad - {Maintaining permanent system cache for all favorite processes}\\
+	\quad - {Desktop service : Playing music/movies/finding docs}\\
+	\quad - {Web services : Top rated movies at IMDb,Wikipedia keyword information,Dictionary}
+	\resumeSubHeadingListEnd
+	
+	%
+	\section{Certification \& MOOC\' s Attended}
+	
+	\resumeSubHeadingListStart
+	\resumeSubItem{Machine Leaning Specialization } \hfill \textsc{coursera} [2/5]
+	\resumeSubItem{Machine Learning } \hfill\textsc{coursera} [3/5]
+	\resumeSubItem{Basic Statistics } \hfill\textsc{coursera} [completed]
+	\resumeSubItem{Probabilistic Graphical Model } \hfill\textsc{coursera} [1/3]
+	\resumeSubItem{Python for Everybody Specialization} \hfill\textsc{coursera} [completed]
+	
+	\resumeSubHeadingListEnd
+	
+	%-------------------------------------------
 \end{document}
