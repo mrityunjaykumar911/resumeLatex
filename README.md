@@ -4,7 +4,7 @@ Mrityunjay has detailed his profile under cv section, whereas his resume can be 
 
 PERSONAL INFO:
   Mrityunjay Kumar
-  DATA SCIENTIST
+  Senior Software Engineer
   TALENTICA SOFTWARE
   PUNE , INDIA
 
